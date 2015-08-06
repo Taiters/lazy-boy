@@ -1,0 +1,5 @@
+# Supported engines: fileDB
+dbEngine: fileDB
+
+fileDB:
+  path: data
