@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dantait.lazyboy.ioc.DBModuleResolver;
-import com.dantait.lazyboy.ioc.LazyBoyModule;
+import com.dantait.lazyboy.ioc.CoreModule;
 import com.dantait.lazyboy.resources.ClustersResource;
 import com.dantait.lazyboy.resources.SuitesResource;
 import com.google.inject.AbstractModule;
@@ -36,7 +36,7 @@ public class LazyBoyApplication extends Application<LazyBoyConfiguration>
     private Injector createInjector(final LazyBoyConfiguration conf) {
     	DBModuleResolver resolver = new DBModuleResolver(conf);
     	List<AbstractModule> modules = new ArrayList<AbstractModule>();
-    	modules.add(new LazyBoyModule(conf));
+    	modules.add(new CoreModule(conf));
     	
     	AbstractModule dbModule = resolver.resolve();
     	if(dbModule != null) {

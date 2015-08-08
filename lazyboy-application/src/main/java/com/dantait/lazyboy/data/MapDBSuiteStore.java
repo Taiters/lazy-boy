@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import com.dantait.lazyboy.api.Cluster;
 import com.dantait.lazyboy.api.Suite;
 
 public class MapDBSuiteStore extends MapDBStore implements ISuiteStore {

@@ -5,14 +5,13 @@ import com.dantait.lazyboy.core.ClusterService;
 import com.dantait.lazyboy.core.IClusterService;
 import com.dantait.lazyboy.core.ISuiteService;
 import com.dantait.lazyboy.core.SuiteService;
-import com.dantait.lazyboy.data.*;
 import com.google.inject.AbstractModule;
 
-public class LazyBoyModule extends AbstractModule {
+public class CoreModule extends AbstractModule {
 
 	private final LazyBoyConfiguration configuration;
 	
-	public LazyBoyModule(LazyBoyConfiguration configuration) {
+	public CoreModule(LazyBoyConfiguration configuration) {
 		this.configuration = configuration;
 	}
 	
@@ -21,11 +20,7 @@ public class LazyBoyModule extends AbstractModule {
 		bind(LazyBoyConfiguration.class).toInstance(configuration);
 		
 		bind(IClusterService.class).to(ClusterService.class);
-		bind(IClusterStore.class).to(MapDBClusterStore.class);
-		
 		bind(ISuiteService.class).to(SuiteService.class);
-		bind(ISuiteStore.class).to(MapDBSuiteStore.class);
-		
 	}
 
 }
